@@ -1,0 +1,346 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    color: #ddd;
+    font-family: verdana, sans-serif;
+    letter-spacing: 0.1em;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: 15px;
+    padding-bottom: 25px;
+}
+
+
+body #human-body{
+    margin: auto;
+    padding: auto;
+    width: 700px;
+    height:auto ;
+    padding: 10px;
+    margin-top: 15%;
+}
+body .Welcome{
+    padding: 10px;
+    font-weight: 600px;
+
+}
+.Welcome h1{
+    font-size: 50px;
+    color: blue;
+    text-shadow: 1px 3px 8px  black;
+}
+.Welcome p, span{
+    color: #fff;
+    word-spacing: 2px;
+    font-size: 20px;
+}
+.Welcome span{
+    margin: 5px;
+    padding: 5px;
+    color: aliceblue;
+}
+
+#human-body p{
+    margin-top: 15px;
+    margin: 5px;
+    letter-spacing: 5px;
+    z-index: 2;
+}
+
+button{
+    width: 250px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    background:linear-gradient(rgba(182, 176, 238, 0.7),rgb(0,45,63, 0.7));
+    font-size: 15px;
+    font-weight: bold;
+    color: #ddd;
+    letter-spacing: 0.2em;
+}
+
+@media (max-width:640px){
+    body #human-body{
+        margin: auto;
+        padding: auto;
+        width:auto;
+        height:auto ;
+        color: #ddd;
+        font-family: verdana, sans-serif;
+        padding: 10px;
+        margin-top: 45%;
+    }
+
+    body #human-body p{
+        z-index: 20;
+        color: #ddd;
+    }
+    .En-tete{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .En-tete img{
+        width: 50px;
+        border-radius: 50%;
+    }
+    button{
+        width: 250px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 20px;
+        text-align: center;
+        background:linear-gradient(rgba(182, 176, 238, 0.7),rgb(0,45,63, 0.7));
+        font-size: 15px;
+        font-weight: bold;
+        color: #ddd;
+        border:none;
+        letter-spacing: 0.2em;
+    }
+
+/*gestion menu hamburger*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 11, 248, 0.5); /* Transparence */
+    backdrop-filter: blur(5px); /* Floutage de l'arrière-plan */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu h1{
+    color:blue;
+    text-decoration: double white;
+
+}
+
+.menu li a:hover {
+    color: #4a90e2;
+}
+/* Animation pour la croix */
+.hamburger.active .line:nth-child(1) {
+    transform: rotate(42deg) translateY(18px);
+}
+
+.hamburger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+    transform: rotate(-40deg) translateY(-18px);
+}
+    
+/*geston animation des circulation*/
+
+@keyframes animate {
+    0% {
+      opacity: 0;
+      top: -10%;
+      transform: translateX(20px) rotate(0deg);
+    }
+    10% {
+      opacity: 1;
+    }
+    30% {
+        opacity: 1;
+      transform: translateX(-20px) rotate(45deg);
+    }
+    50% {
+      transform: translateX(-20px) rotate(90deg);
+    }
+    60% {
+        opacity: 0;
+      transform: translateX(20px) rotate(180deg);
+    }
+
+    85% {
+        opacity: 1;
+      transform: translateX(20px) rotate(225deg);
+    }
+    100% {
+        top: 90vh;
+        opacity: 1;
+        transform: translateX(20px) rotate(225deg);
+      }
+}
+
+    .girland {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+      }
+      .girland .bolt {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      .girland .bolt div {
+        position: absolute;
+        display: block;
+        width: 60px;
+        height: 20px;
+        background-color: blue;
+        z-index: 999;
+        backdrop-filter: blur(5px);
+      }
+/*gestion des bolt lors d'une animation*/
+      .girland .bolt div:nth-child(1) {
+        left: 5%;
+        animation: animate 5s linear infinite;
+      }
+      .girland .bolt div:nth-child(2) {
+        left: 20%;
+        animation: animate 10s linear infinite;
+      }
+      .girland .bolt div:nth-child(3) {
+        left: 30%;
+        animation: animate 15s linear infinite;
+      }
+      .girland .bolt div:nth-child(4) {
+        left: 50%;
+        animation: animate 5s linear infinite;
+      }
+      .girland .bolt div:nth-child(5) {
+        left: 60%;
+        animation: animate 10s linear infinite;
+      }
+      .girland .bolt div:nth-child(6) {
+        left: 50%;
+        animation: animate 9s linear infinite;
+      }
+      .girland .bolt div:nth-child(7) {
+        left: 60%;
+        animation: animate 15s linear infinite;
+      }
+      .girland .bolt div:nth-child(8) {
+        left: 10%;
+        animation: animate 20s linear infinite;
+      }
+      .girland .bolt div:nth-child(9) {
+        left: 40%;
+        animation: animate 15s linear infinite;
+      }
+      .girland .bolt div:nth-child(10) {
+        left: 60%;
+        animation: animate 20s linear infinite;
+      }
+      .girland .bolt div img{
+        width:50px;
+      }
+
+@keyframes Bienvenue {
+    0%{
+        opacity: 0;
+        transform: translateY(-60px) rotate(-180deg);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(-50px) rotate(-30deg);
+    }
+    90%{
+        opacity: 2;
+        transform: translateY(0) rotate(0);
+    }
+}
+.Welcome h1{
+    animation: Bienvenue 5s normal ease;
+}
+
+@keyframes clem {
+    25%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        color: rgb(16, 12, 250)
+    }
+    60%{
+        color: rgb(250, 7, 7);
+    }
+    80%{
+        color: rgb(248, 232, 10);
+    }
+}
+
+.Welcome p, span{
+    animation: clem 3s normal infinite;
+}
+}
